@@ -3,6 +3,7 @@ import 'package:patterns_provider/viewmodels/home_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 import '../views/item_of_post.dart';
+import 'create_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -49,7 +50,10 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => CreatePage()));
+        },
         child: const Icon(Icons.add),
       ),
     );

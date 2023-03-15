@@ -5,6 +5,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:patterns_provider/viewmodels/home_viewmodel.dart';
 
 import '../model/post_model.dart';
+import '../pages/update_page.dart';
 
 Widget itemOfPost(HomeViewModel viewModel, Post post) {
   return Slidable(
@@ -13,7 +14,9 @@ Widget itemOfPost(HomeViewModel viewModel, Post post) {
       dismissible: DismissiblePane(onDismissed: () {}),
       children: [
         SlidableAction(
-          onPressed: (BuildContext context) {},
+          onPressed: (BuildContext context) {
+            openAlertBox(post, context, viewModel);
+          },
           backgroundColor: Colors.green,
           foregroundColor: Colors.white,
           icon: Icons.edit,
